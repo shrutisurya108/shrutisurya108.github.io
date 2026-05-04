@@ -1,155 +1,142 @@
-# Shruti Kumari - Portfolio Website
+# 🌐 Shruti Kumari — Portfolio Website
 
-A modern, responsive portfolio website showcasing my experience as a Machine Learning Engineer. Built with HTML5, CSS3, and JavaScript.
+[![Live Site](https://img.shields.io/badge/🚀%20Live%20Site-shrutikumari108.github.io-38bdf8?style=for-the-badge)](https://shrutikumari108.github.io)
+[![HTML](https://img.shields.io/badge/HTML5-Single%20File-E34F26?style=for-the-badge&logo=html5&logoColor=white)](index.html)
+[![License](https://img.shields.io/badge/License-MIT-4ade80?style=for-the-badge)](LICENSE)
 
-## 🚀 Features
-
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Interactive Elements**: Hover effects, smooth scrolling, and dynamic content
-- **Contact Form**: Functional contact form with validation
-- **Performance Optimized**: Fast loading with optimized assets
-- **SEO Friendly**: Semantic HTML structure for better search engine visibility
-
-## 📋 Sections
-
-1. **Hero Section**: Introduction with call-to-action buttons
-2. **About**: Professional summary with key statistics
-3. **Experience**: Detailed work history with timeline layout
-4. **Projects**: Featured projects with technology tags
-5. **Skills**: Comprehensive skills showcase organized by category
-6. **Education**: Academic background and achievements
-7. **Contact**: Contact information and functional form
-
-## 🛠️ Technologies Used
-
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript**: Interactive functionality and animations
-- **Font Awesome**: Icons and social media links
-- **Google Fonts**: Inter font family for typography
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px
-- **Mobile**: 320px - 767px
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, for development)
-
-### Installation
-
-1. **Clone or Download** the repository
-   ```bash
-   git clone <repository-url>
-   cd Portfolio_Shruti
-   ```
-
-2. **Open the website**
-   - **Option 1**: Double-click `index.html` to open in your browser
-   - **Option 2**: Use a local server for development:
-     ```bash
-     # Using Python 3
-     python -m http.server 8000
-     
-     # Using Node.js (if you have http-server installed)
-     npx http-server
-     
-     # Using PHP
-     php -S localhost:8000
-     ```
-
-3. **Access the website**
-   - If using a local server: `http://localhost:8000`
-   - If opening directly: File path in browser
-
-## 📁 File Structure
-
-```
-Portfolio_Shruti/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript functionality
-├── README.md           # This file
-└── Shruti_Kumari_Resume.txt  # Original resume content
-```
-
-## 🎨 Customization
-
-### Colors
-The website uses a modern color palette:
-- Primary Blue: `#2563eb`
-- Gradient: `#667eea` to `#764ba2`
-- Accent Yellow: `#fbbf24`
-- Text: `#1f2937` (dark), `#4b5563` (medium), `#6b7280` (light)
-
-### Typography
-- Font Family: Inter (Google Fonts)
-- Weights: 300, 400, 500, 600, 700
-
-### Animations
-- Smooth scrolling navigation
-- Fade-in animations on scroll
-- Hover effects on interactive elements
-- Typing animation for hero title
-- Counter animations for statistics
-
-## 📧 Contact Information
-
-- **Name**: Shruti Kumari
-- **Email**: shruti2210kumari@gmail.com
-- **Phone**: (716) 232-0253
-- **LinkedIn**: [https://www.linkedin.com/in/shrutikumari108/](https://www.linkedin.com/in/shrutikumari108/)
-
-## 🎯 Key Achievements Highlighted
-
-- **2+ Years Experience** in Machine Learning Engineering
-- **3.8/4.0 GPA** in Master's program
-- **70% Reduction** in bug matching time
-- **40% Improvement** in test coverage
-- **85% Prediction Accuracy** in ML models
-
-## 🔧 Browser Support
-
-- Chrome 60+
-- Firefox 60+
-- Safari 12+
-- Edge 79+
-
-## 📈 Performance Features
-
-- Optimized images and assets
-- Efficient CSS with minimal redundancy
-- Lazy loading for better performance
-- Smooth animations with hardware acceleration
-- Mobile-first responsive design
-
-## 🎮 Easter Eggs
-
-- Try the Konami Code: ↑↑↓↓←→←→BA
-- Console welcome message
-- Smooth animations and transitions
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio. If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
-
-## 📞 Support
-
-If you have any questions or need help customizing this portfolio, feel free to reach out:
-
-- Email: shruti2210kumari@gmail.com
-- LinkedIn: [Shruti Kumari](https://www.linkedin.com/in/shrutikumari108/)
+> Personal portfolio website for **Shruti Kumari** — Data Scientist | AI/ML Explorer  
+> Built as a single-file, zero-dependency HTML/CSS/JS site hosted on GitHub Pages.
 
 ---
 
-**Built with ❤️ by Shruti Kumari**
+## ✨ Features
+
+- 🌗 **Dark / Light theme toggle** — auto-detects system preference
+- 🖱️ **Custom animated cursor** with hover interactions
+- 🔮 **Particle network background** (canvas-based, animated)
+- 📜 **Scroll-reveal animations** on all sections
+- 💬 **Auto-rotating quotes carousel** with manual controls
+- 📱 **Fully responsive** — mobile, tablet, desktop
+- ⚡ **Zero dependencies** — no frameworks, no build step; just one HTML file
+- ✏️ **Placeholder slots** for 2 additional projects ready to fill in
+
+---
+
+## 🗂️ Site Sections
+
+| Section | Description |
+|---|---|
+| **Hero** | Name, title, animated stats, floating tech tags |
+| **The Story So Far** | Bio, live code card, portfolio + social links |
+| **Things I'm Good At** | 8 capability cards with tech tags |
+| **Where I've Shipped** | Timeline-based work experience with impact badges |
+| **The Lab** | 4 real + 2 placeholder project cards with metrics |
+| **The Toolkit** | Full skill grid organized by category with HOT badges |
+| **Data Minds Speak** | Auto-rotating developer quotes carousel |
+| **Contact** | Social links + contact info card |
+
+---
+
+## 🚀 Deployment (GitHub Pages)
+
+### Step 1 — Create the repo
+```
+Repository name: shrutikumari108.github.io
+Visibility: Public
+```
+> The repo name **must** match your GitHub username exactly for user-level GitHub Pages.
+
+### Step 2 — Add the file
+```bash
+git clone https://github.com/shrutikumari108/shrutikumari108.github.io
+cd shrutikumari108.github.io
+# Copy index.html into this folder
+git add index.html
+git commit -m "🚀 Launch portfolio website"
+git push origin main
+```
+
+### Step 3 — Enable GitHub Pages
+1. Go to **Settings → Pages**
+2. Source: **Deploy from a branch**
+3. Branch: `main` / `root`
+4. Save → Your site is live at `https://shrutikumari108.github.io` 🎉
+
+---
+
+## ✏️ Customization Checklist
+
+### 🔴 Required — Do these first
+
+- [ ] **Add your photo**: Find `avatar-placeholder` div in `index.html` and replace with:
+  ```html
+  <img class="avatar-img" src="your-photo.jpg" alt="Shruti Kumari"/>
+  ```
+  Upload your photo to the same repo folder.
+
+- [ ] **Portfolio link**: Search for `your-portfolio-link-here.com` — replace all instances with your actual URL (or remove those buttons if not ready).
+
+- [ ] **Resume link**: Find the `<!-- 🔗 Replace # with your actual portfolio/resume link -->` comment and replace `href="#"` with your resume URL (Google Drive, Dropbox, etc.)
+
+- [ ] **GitHub username in links**: Update `https://github.com/shrutikumari108` if your username differs.
+
+- [ ] **Kaggle link**: Replace the `href="#"` on the Kaggle social button with your Kaggle profile URL.
+
+### 🟡 Projects — Fill in placeholder cards
+
+Each placeholder card is clearly marked with `<!-- ✏️ PLACEHOLDER PROJECT 5 -->` comments. For each:
+1. Update the `project-title` div
+2. Update the `project-desc` div  
+3. Update `metric-val` and `metric-lbl` values
+4. Update `stack-pill` spans with your actual tech stack
+5. Replace `href="#"` on GitHub and demo links
+6. Remove the `<div class="placeholder-tag">Coming Soon</div>` line
+7. Change the `project-icon` emoji to something fitting
+
+### 🟢 Optional enhancements
+
+- **Add more projects**: Copy any `project-card` block and paste inside `.projects-grid`
+- **Add social links**: Duplicate a `.social-link` in the Contact section (Twitter/X, Medium, etc.)
+- **Update quotes**: Add your own to the `#quote-track` div — copy any `.quote-slide` block
+- **Change color accent**: Edit `--accent` in the `:root` CSS block (default: `#38bdf8`)
+- **Update stats**: Hero stats are hardcoded — update numbers in the `.hero-stats` section
+
+---
+
+## 🗂️ File Structure
+
+```
+shrutikumari108.github.io/
+│
+├── index.html          # ← The entire site (single file)
+├── your-photo.jpg      # ← Add your photo here
+└── README.md           # ← This file
+```
+
+---
+
+## 🎨 Design Decisions
+
+| Choice | Reason |
+|---|---|
+| **Single HTML file** | Zero build tooling, instant GitHub Pages deploy |
+| **DM Mono + Syne + Instrument Serif** | Technical precision + editorial impact |
+| **Dark default, light toggle** | ML/dev audiences prefer dark; system-aware fallback |
+| **Canvas particles** | Adds depth without heavy libraries |
+| **No frameworks** | Loads instantly, works everywhere, no dependencies to break |
+
+---
+
+## 📬 Contact
+
+**Shruti Kumari**  
+📧 shrutikumari4876@gmail.com  
+📞 +1 (716) 232-0253  
+🔗 [LinkedIn](https://www.linkedin.com/in/shrutikumari108/)  
+🐙 [GitHub](https://github.com/shrutikumari108)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ and way too much coffee &nbsp;·&nbsp; © 2026 Shruti Kumari</sub>
+</div>
