@@ -1,669 +1,1565 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shruti Kumari - Machine Learning Engineer, AI Engineer, Data Scientist</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Essential styles to ensure the page renders correctly */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #ffffff;
-        }
-        
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            color: white;
-            display: block;
-            white-space: nowrap;
-        }
-        
-        .hero-title span {
-            display: inline;
-            white-space: nowrap;
-        }
-        
-        .highlight {
-            color: #fbbf24 !important;
-            font-weight: 700 !important;
-            background: none !important;
-            text-shadow: none !important;
-        }
-        
-        h1 .highlight {
-            color: #fbbf24 !important;
-            font-weight: 700 !important;
-        }
-        
-        .hero-title .highlight {
-            color: #fbbf24 !important;
-            font-weight: 700 !important;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-            border: 2px solid transparent;
-        }
-        
-        .btn-primary {
-            background: #fbbf24;
-            color: #1f2937;
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border-color: white;
-        }
-        
-        .hero-social {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .profile-image {
-            width: 280px;
-            height: 350px;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-        
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        
-        .nav-logo a {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            text-decoration: none;
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-link {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .bar {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .profile-image {
-                width: 250px;
-                height: 300px;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: white;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 2rem 0;
-            }
-        }
-        
-        .education-specialization {
-            color: #2563eb;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-        }
-        
-        /* Final override to ensure highlight works */
-        .hero-title span.highlight {
-            color: #fbbf24 !important;
-            font-weight: 700 !important;
-            background: transparent !important;
-            text-shadow: none !important;
-        }
-        
-        /* Additional override for external CSS conflicts */
-        h1 .highlight,
-        .hero-title .highlight,
-        span.highlight {
-            color: #fbbf24 !important;
-            font-weight: 700 !important;
-            background: none !important;
-            text-shadow: none !important;
-        }
-        
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shruti Kumari — Data Scientist & AI/ML Explorer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💎</text></svg>"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg:         #0a0e1a;
+      --bg2:        #111827;
+      --bg3:        #1a2234;
+      --surface:    #1e2a3a;
+      --border:     rgba(99,179,237,0.15);
+      --accent:     #38bdf8;
+      --accent2:    #818cf8;
+      --accent3:    #34d399;
+      --gold:       #fbbf24;
+      --text:       #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim:   #64748b;
+      --card:       rgba(30,42,58,0.85);
+      --glow:       0 0 40px rgba(56,189,248,0.15);
+      --radius:     14px;
+      --nav-h:      70px;
+    }
+    [data-theme="light"] {
+      --bg:         #f0f4ff;
+      --bg2:        #e8edf8;
+      --bg3:        #dde4f5;
+      --surface:    #ffffff;
+      --border:     rgba(99,130,200,0.2);
+      --accent:     #2563eb;
+      --accent2:    #7c3aed;
+      --accent3:    #059669;
+      --gold:       #d97706;
+      --text:       #0f172a;
+      --text-muted: #475569;
+      --text-dim:   #94a3b8;
+      --card:       rgba(255,255,255,0.9);
+      --glow:       0 0 40px rgba(37,99,235,0.1);
+    }
+
+    /* ─── RESET & BASE ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'DM Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background 0.4s, color 0.4s;
+      cursor: none;
+    }
+
+    /* ─── CUSTOM CURSOR ──────────────────────────────────────── */
+    #cursor {
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: fixed; z-index: 9999;
+      pointer-events: none;
+      transition: transform 0.15s, opacity 0.3s;
+      mix-blend-mode: screen;
+    }
+    #cursor-ring {
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--accent);
+      border-radius: 50%;
+      position: fixed; z-index: 9998;
+      pointer-events: none;
+      transition: all 0.1s;
+      opacity: 0.5;
+    }
+    a:hover ~ #cursor, button:hover ~ #cursor { transform: scale(2); }
+
+    /* ─── PARTICLE CANVAS ────────────────────────────────────── */
+    #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.4; }
+
+    /* ─── NOISE OVERLAY ──────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      backdrop-filter: blur(20px) saturate(1.8);
+      background: rgba(10,14,26,0.8);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s;
+    }
+    [data-theme="light"] nav { background: rgba(240,244,255,0.85); }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--text); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none;
+      font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+      position: relative; transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+      height: 1px; background: var(--accent);
+      transform: scaleX(0); transition: transform 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .theme-btn {
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text-muted); width: 38px; height: 38px;
+      border-radius: 50%; cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .theme-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: all 0.3s; }
+
+    /* ─── MOBILE NAV ─────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none; flex-direction: column; position: fixed;
+        top: var(--nav-h); left: 0; right: 0;
+        background: var(--bg2); padding: 2rem;
+        border-bottom: 1px solid var(--border); gap: 1.5rem;
+      }
+      .nav-links.open { display: flex; }
+      .hamburger { display: block; }
+    }
+
+    /* ─── SECTIONS ───────────────────────────────────────────── */
+    section { position: relative; z-index: 2; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+
+    /* ─── HERO ───────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding-top: var(--nav-h);
+      position: relative; overflow: hidden;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block; width: 32px; height: 1px; background: var(--accent);
+    }
+    h1.hero-name {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.05; letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+    h1.hero-name .line2 { color: var(--accent); display: block; }
+    .hero-role {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--text-muted); margin-bottom: 1.8rem;
+    }
+    .hero-role .highlight { color: var(--accent2); font-style: normal; font-family: 'DM Mono', monospace; font-size: 0.9em; }
+    .hero-desc {
+      color: var(--text-muted); line-height: 1.8;
+      font-size: 0.9rem; max-width: 500px; margin-bottom: 2.5rem;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.6rem; border-radius: 8px;
+      font-family: 'DM Mono', monospace; font-size: 0.8rem;
+      letter-spacing: 0.05em; text-decoration: none;
+      transition: all 0.25s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0a0e1a;
+      box-shadow: 0 0 24px rgba(56,189,248,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(56,189,248,0.5); }
+    .btn-outline {
+      border: 1px solid var(--border); color: var(--text);
+      background: transparent;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); background: rgba(56,189,248,0.05); }
+
+    /* Hero avatar */
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
+    .avatar-frame {
+      position: relative; width: clamp(280px, 40vw, 380px); aspect-ratio: 1;
+    }
+    .avatar-ring {
+      position: absolute; inset: -12px;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3)) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      animation: spin 8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-img {
+      width: 100%; height: 100%; border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bg3);
+      background: var(--surface);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .avatar-placeholder {
+      width: 100%; height: 100%; border-radius: 50%;
+      background: linear-gradient(135deg, var(--surface), var(--bg3));
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.5rem; font-size: 0.75rem; color: var(--text-dim);
+      border: 3px solid var(--border);
+    }
+    .avatar-placeholder i { font-size: 4rem; color: var(--text-dim); }
+    .avatar-badge {
+      position: absolute; bottom: 8px; right: 8px;
+      background: var(--accent3); color: #0a0e1a;
+      border-radius: 20px; padding: 0.3rem 0.8rem;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .avatar-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #0a0e1a; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+    /* Floating tags */
+    .float-tag {
+      position: absolute; background: var(--card);
+      border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.5rem 0.9rem; font-size: 0.72rem;
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; gap: 0.4rem;
+      animation: floatY 3s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    .float-tag:nth-child(2) { animation-delay: -1s; }
+    .float-tag:nth-child(3) { animation-delay: -2s; }
+    .float-tag.t1 { top: 5%; left: -15%; }
+    .float-tag.t2 { top: 55%; right: -18%; animation-delay: -1.5s; }
+    .float-tag.t3 { bottom: 5%; left: -10%; animation-delay: -0.5s; }
+    @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 2.5rem;
+      border-top: 1px solid var(--border); padding-top: 2rem;
+    }
+    .stat-item { text-align: left; }
+    .stat-num {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: 1.8rem; color: var(--accent); line-height: 1;
+    }
+    .stat-label { font-size: 0.7rem; color: var(--text-dim); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: var(--text-dim); font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; animation: fadeInUp 1s 1.5s both;
+    }
+    .scroll-hint .arrow { animation: bounce 1.5s ease-in-out infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+    /* ─── SECTION HEADER ─────────────────────────────────────── */
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.8rem;
+      padding: 0.3rem 1rem; border: 1px solid rgba(56,189,248,0.3);
+      border-radius: 20px; background: rgba(56,189,248,0.05);
+    }
+    h2.section-title {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em; margin-bottom: 1rem;
+    }
+    .section-sub { color: var(--text-muted); font-size: 0.9rem; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+    /* ─── ABOUT / SUPERPOWERS ────────────────────────────────── */
+    #about { padding: 7rem 0; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+    }
+    .about-text p { color: var(--text-muted); line-height: 1.9; font-size: 0.9rem; margin-bottom: 1.2rem; }
+    .about-text p strong { color: var(--text); }
+
+    /* Code block style */
+    .code-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      font-size: 0.82rem; line-height: 1.9;
+      position: relative; overflow: hidden;
+    }
+    .code-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    }
+    .code-topbar {
+      display: flex; align-items: center; gap: 0.5rem;
+      margin-bottom: 1rem; padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.r { background: #ff5f57; }
+    .dot.y { background: #febc2e; }
+    .dot.g { background: #28c840; }
+    .code-filename { color: var(--text-dim); font-size: 0.72rem; margin-left: 0.5rem; }
+    .kw { color: var(--accent2); }
+    .str { color: var(--accent3); }
+    .key { color: var(--accent); }
+    .num { color: var(--gold); }
+    .cm { color: var(--text-dim); font-style: italic; }
+
+    /* Superpowers */
+    .powers-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem; margin-top: 3rem;
+    }
+    .power-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .power-card::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(56,189,248,0.05), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .power-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--glow); }
+    .power-card:hover::after { opacity: 1; }
+    .power-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .power-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text);
+    }
+    .power-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.7; }
+    .power-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+    .tag-chip {
+      font-size: 0.65rem; padding: 0.2rem 0.6rem;
+      border-radius: 20px; border: 1px solid var(--border);
+      color: var(--text-dim); background: var(--bg3);
+    }
+
+    /* ─── EXPERIENCE ─────────────────────────────────────────── */
+    #experience { padding: 7rem 0; background: var(--bg2); }
+    .timeline { position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+    .timeline-item {
+      padding-left: 3.5rem; padding-bottom: 3.5rem; position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: 10px; top: 4px;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--bg2); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 12px rgba(56,189,248,0.4);
+    }
+    .timeline-dot-inner { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .tl-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .tl-company {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1.1rem; color: var(--text);
+    }
+    .tl-role { color: var(--accent); font-size: 0.82rem; margin-bottom: 0.3rem; }
+    .tl-date {
+      font-size: 0.72rem; color: var(--text-dim);
+      background: var(--bg3); border: 1px solid var(--border);
+      padding: 0.25rem 0.75rem; border-radius: 20px;
+    }
+    .tl-achievements { list-style: none; margin-top: 1rem; }
+    .tl-achievements li {
+      color: var(--text-muted); font-size: 0.82rem; line-height: 1.7;
+      padding: 0.3rem 0; display: flex; gap: 0.6rem;
+    }
+    .tl-achievements li::before { content: '▸'; color: var(--accent); flex-shrink: 0; margin-top: 0.05rem; }
+    .impact-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .impact-badge {
+      font-size: 0.7rem; padding: 0.3rem 0.8rem;
+      border-radius: 20px; font-weight: 600;
+      display: flex; align-items: center; gap: 0.3rem;
+    }
+    .imp-green { background: rgba(52,211,153,0.15); color: var(--accent3); border: 1px solid rgba(52,211,153,0.3); }
+    .imp-blue  { background: rgba(56,189,248,0.12); color: var(--accent);  border: 1px solid rgba(56,189,248,0.25); }
+    .imp-purple{ background: rgba(129,140,248,0.12); color: var(--accent2); border: 1px solid rgba(129,140,248,0.25); }
+    .imp-gold  { background: rgba(251,191,36,0.12);  color: var(--gold);   border: 1px solid rgba(251,191,36,0.25); }
+
+    /* ─── PROJECTS ───────────────────────────────────────────── */
+    #projects { padding: 7rem 0; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: all 0.35s; backdrop-filter: blur(10px);
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .project-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: var(--glow); }
+    .project-card.featured { grid-column: span 2; }
+    @media (max-width: 900px) { .project-card.featured { grid-column: span 1; } }
+    .project-accent-bar { height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .project-accent-bar.green { background: linear-gradient(90deg, var(--accent3), var(--accent)); }
+    .project-accent-bar.purple { background: linear-gradient(90deg, var(--accent2), var(--accent)); }
+    .project-accent-bar.gold { background: linear-gradient(90deg, var(--gold), var(--accent2)); }
+    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.8rem; }
+    .project-icon { font-size: 1.8rem; }
+    .project-links { display: flex; gap: 0.5rem; }
+    .proj-link {
+      width: 32px; height: 32px; border-radius: 8px;
+      border: 1px solid var(--border); color: var(--text-muted);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; text-decoration: none; transition: all 0.2s;
+    }
+    .proj-link:hover { border-color: var(--accent); color: var(--accent); background: rgba(56,189,248,0.08); }
+    .project-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 1rem; margin-bottom: 0.6rem; color: var(--text); line-height: 1.3;
+    }
+    .project-desc { color: var(--text-muted); font-size: 0.78rem; line-height: 1.75; flex: 1; }
+    .project-metrics {
+      display: flex; gap: 1rem; margin: 1rem 0;
+      padding: 0.8rem; background: var(--bg3);
+      border-radius: 8px; flex-wrap: wrap;
+    }
+    .metric { text-align: center; }
+    .metric-val { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--accent); }
+    .metric-lbl { font-size: 0.62rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+    .stack-pill {
+      font-size: 0.65rem; padding: 0.25rem 0.65rem;
+      border-radius: 20px; border: 1px solid var(--border);
+      color: var(--text-muted); background: var(--bg3);
+      transition: all 0.2s;
+    }
+    .project-card:hover .stack-pill { border-color: rgba(56,189,248,0.3); color: var(--accent); }
+    .placeholder-tag {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.65rem; color: var(--gold);
+      background: rgba(251,191,36,0.1); border: 1px dashed rgba(251,191,36,0.4);
+      padding: 0.2rem 0.6rem; border-radius: 20px; margin-bottom: 0.5rem;
+    }
+
+    /* ─── SKILLS ─────────────────────────────────────────────── */
+    #skills { padding: 7rem 0; background: var(--bg2); }
+    .skills-container { display: flex; flex-direction: column; gap: 3rem; }
+    .skill-group-title {
+      font-family: 'Syne', sans-serif; font-weight: 700;
+      font-size: 0.85rem; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.15em;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .skill-group-title::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .skill-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1rem; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--card);
+      font-size: 0.78rem; color: var(--text-muted);
+      transition: all 0.25s; cursor: default;
+      backdrop-filter: blur(8px);
+    }
+    .skill-badge:hover { border-color: var(--accent); color: var(--text); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(56,189,248,0.12); }
+    .skill-badge img { width: 18px; height: 18px; object-fit: contain; }
+    .skill-badge i { font-size: 1rem; }
+    .hot-badge {
+      font-size: 0.55rem; background: rgba(251,191,36,0.2); color: var(--gold);
+      border: 1px solid rgba(251,191,36,0.4); padding: 0.1rem 0.4rem;
+      border-radius: 4px; margin-left: 0.3rem;
+    }
+
+    /* ─── QUOTES ─────────────────────────────────────────────── */
+    #quotes { padding: 7rem 0; }
+    .quotes-carousel { position: relative; overflow: hidden; }
+    .quote-track { display: flex; transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1); }
+    .quote-slide {
+      min-width: 100%; padding: 0 1rem;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    .quote-text {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      line-height: 1.6; color: var(--text);
+      max-width: 800px; margin: 0 auto 1.5rem;
+      position: relative;
+    }
+    .quote-text::before, .quote-text::after {
+      font-family: 'Syne', sans-serif; font-size: 4rem;
+      color: var(--accent); opacity: 0.3; line-height: 0;
+      position: relative; top: 0.3em;
+    }
+    .quote-text::before { content: '"'; margin-right: 0.1em; }
+    .quote-text::after  { content: '"'; margin-left: 0.1em; }
+    .quote-author { font-size: 0.78rem; color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+    .quote-controls { display: flex; gap: 0.8rem; justify-content: center; margin-top: 2.5rem; }
+    .q-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: all 0.2s; }
+    .q-dot.active { background: var(--accent); transform: scale(1.3); }
+    .q-btn {
+      background: none; border: 1px solid var(--border); color: var(--text-muted);
+      width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; font-size: 0.85rem;
+    }
+    .q-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── CONTACT ────────────────────────────────────────────── */
+    #contact { padding: 7rem 0; background: var(--bg2); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .contact-text h2 {
+      font-family: 'Syne', sans-serif; font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; letter-spacing: -0.03em;
+    }
+    .contact-text p { color: var(--text-muted); line-height: 1.8; font-size: 0.88rem; margin-bottom: 2rem; }
+    .social-links { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .social-link {
+      display: flex; align-items: center; gap: 0.6rem;
+      padding: 0.65rem 1.2rem; border-radius: 8px;
+      border: 1px solid var(--border); color: var(--text-muted);
+      text-decoration: none; font-size: 0.78rem;
+      transition: all 0.25s; background: var(--card);
+    }
+    .social-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .contact-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2.5rem;
+      backdrop-filter: blur(12px); position: relative; overflow: hidden;
+    }
+    .contact-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.68rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+    .contact-value { font-size: 0.85rem; color: var(--text); margin-top: 0.1rem; }
+    .contact-value a { color: inherit; text-decoration: none; }
+    .contact-value a:hover { color: var(--accent); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      padding: 2rem 0; text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem; color: var(--text-dim);
+      position: relative; z-index: 2;
+    }
+    footer span { color: var(--accent); }
+
+    /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-eyebrow { justify-content: center; }
+      .hero-desc { margin: 0 auto 2.5rem; }
+      .hero-cta { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-visual { order: -1; }
+      .float-tag { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── BACK TO TOP ────────────────────────────────────────── */
+    #back-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 50;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--accent); color: #0a0e1a;
+      border: none; cursor: pointer; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transform: translateY(10px);
+      transition: all 0.3s; box-shadow: 0 0 20px rgba(56,189,248,0.4);
+    }
+    #back-top.show { opacity: 1; transform: translateY(0); }
+    #back-top:hover { transform: translateY(-3px) scale(1.05); }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">Shruti Kumari</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#education" class="nav-link">Education</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm Shruti Kumari</h1>
-                <h2 class="hero-subtitle">Machine Learning Engineer, AI Engineer, Data Scientist</h2>
-                <p class="hero-description">
-                    I engineer end-to-end machine learning and AI systems — from data pipelines and model development to cloud deployment and MLOps automation.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://www.linkedin.com/in/shrutikumari108/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/shrutisurya108" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:shruti2210kumari@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="tel:+17162320253" class="social-link">
-                        <i class="fas fa-phone"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-image">
-                    <img src="images/shruti_left_bluesuit.png" alt="Shruti Kumari - Machine Learning Engineer" />
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a passionate Machine Learning and AI Engineer with a strong foundation in data science, 
-                        statistical modeling, and deep learning. I love building intelligent systems that turn complex 
-                        data into real-world impact — from predictive models and NLP applications to computer vision 
-                        and generative AI solutions.
-                    </p>
-                    <p>
-                        My toolkit includes Python, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy, and Spark for 
-                        model development and large-scale data processing. I also work extensively with SQL for data 
-                        management and use Tableau, Power BI, and Matplotlib to transform data into clear, actionable insights.
-                    </p>
-                    <p>
-                        I have hands-on experience implementing MLOps practices using Docker, Kubernetes, Git, and CI/CD 
-                        pipelines, and deploying models on AWS, GCP, and Azure. I'm also deeply interested in the fast-evolving 
-                        landscape of LLMs, transformer architectures, and foundation models that power the next generation of AI systems.
-                    </p>
-                    <p>
-                        At the core, I'm driven by curiosity and a desire to create — whether that means optimizing a model's 
-                        performance, automating an AI workflow, or exploring the boundaries of generative AI. I believe great 
-                        AI solutions start with great data, and I strive to bridge the gap between data science, engineering, and innovation.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>3.8</h3>
-                            <p>Master's GPA</p>
-                        </div>
-                        <div class="stat">
-                            <h3>9.3</h3>
-                            <p>Bachelor's CGPA</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Particle canvas -->
+<canvas id="particles"></canvas>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">C++</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>ML/AI Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">LangChain</span>
-                        <span class="skill-tag">HuggingFace</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Science</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Plotly</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Spark</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">Snowflake</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Technologies</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">Airflow</span>
-                        <span class="skill-tag">Kafka</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>AI/ML Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Neural Networks</span>
-                        <span class="skill-tag">RAG</span>
-                        <span class="skill-tag">LLMs</span>
-                        <span class="skill-tag">Reinforcement Learning</span>
-                        <span class="skill-tag">NLP</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">SK<span>.</span></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#quotes">Wisdom</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="theme-toggle" title="Toggle theme">☀️</button>
+    <a href="mailto:shrutikumari4876@gmail.com" class="btn btn-primary" style="padding:0.5rem 1.1rem;font-size:0.75rem;">
+      <i class="fa fa-paper-plane"></i> Hire Me
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>RAG Pipeline for Document Querying</h3>
-                    <p>Built a RAG pipeline leveraging LangChain, HuggingFace, and OpenAI APIs to enable context-aware document querying and reduce LLM hallucinations by over 40%.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">HuggingFace</span>
-                        <span class="tech-tag">OpenAI</span>
-                        <span class="tech-tag">Vector DB</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Agentic AI Chatbot</h3>
-                    <p>Built an agentic AI chatbot using OpenAI GPT-4, LangChain, and Hugging Face Transformers, integrating tools and memory for autonomous multi-step tasks.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">GPT-4</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">RL</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>Climate Impact on Crop Yields</h3>
-                    <p>Performed feature engineering on climate and crop yield datasets to improve model accuracy in predicting agricultural trends under varying environmental conditions.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Pandas</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">Matplotlib</span>
-                        <span class="tech-tag">NumPy</span>
-                    </div>
-                </div>
-            </div>
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow reveal">👋 &nbsp;Open to Opportunities</div>
+        <h1 class="hero-name reveal reveal-delay-1">
+          Shruti
+          <span class="line2">Kumari</span>
+        </h1>
+        <p class="hero-role reveal reveal-delay-2">
+          Data Scientist &nbsp;&amp;&nbsp; <span class="highlight">AI/ML Explorer</span>
+        </p>
+        <p class="hero-desc reveal reveal-delay-3">
+          Building end-to-end ML pipelines that turn messy enterprise data into intelligent, production-ready systems. Specializing in NLP, time-series forecasting, RAG architectures, and explainable AI.
+        </p>
+        <div class="hero-cta reveal reveal-delay-4">
+          <a href="#projects" class="btn btn-primary"><i class="fa fa-rocket"></i> View My Work</a>
+          <a href="#contact" class="btn btn-outline"><i class="fa fa-envelope"></i> Get In Touch</a>
+          <!-- 🔗 Replace # with your actual portfolio/resume link -->
+          <a href="shruti_resume.pdf" class="btn btn-outline" target="_blank"><i class="fa fa-download"></i> Resume</a>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Software Engineer I</h3>
-                        <h4>Hewlett Packard Enterprise</h4>
-                        <span class="timeline-date">July 2022 - July 2024</span>
-                        <p class="timeline-location">Bangalore, India</p>
-                        <div class="timeline-projects">
-                            <div class="project">
-                                <h5>HPE Integrated Lights-Out (iLO) for Alletra Servers</h5>
-                                <ul>
-                                    <li>Contributed to development of server lifecycle management features by integrating iLO into the Alletra platform for Storage servers</li>
-                                    <li>Designed and implemented 20+ use-case scenarios for platform and back-end functionalities</li>
-                                    <li>Developed and integrated automated test suites into CI/CD pipelines, enhancing test coverage by 40%</li>
-                                </ul>
-                            </div>
-                            <div class="project">
-                                <h5>Bug Predictor for Bugzilla</h5>
-                                <ul>
-                                    <li>Designed, developed, and deployed an ML-based bug prediction tool integrated with Bugzilla</li>
-                                    <li>Achieved 70% reduction in bug matching time and 25% improvement in triage accuracy</li>
-                                    <li>Implemented data preprocessing pipelines achieving 85% prediction accuracy</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3>Research and Developer Intern</h3>
-                        <h4>Hewlett Packard Enterprise</h4>
-                        <span class="timeline-date">January 2022 - July 2022</span>
-                        <p class="timeline-location">Bangalore, India</p>
-                        <ul>
-                            <li>Collaborated on end-to-end development of iLO test libraries from scratch</li>
-                            <li>Enhanced suite of 200+ automated tests, improving test reliability and coverage by 35%</li>
-                            <li>Revamped code structures for HPE 3PAR storage platform transition with 30% reduction in maintenance overhead</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-stats reveal">
+          <div class="stat-item"><div class="stat-num">2.5+</div><div class="stat-label">Years Experience</div></div>
+          <div class="stat-item"><div class="stat-num">88%</div><div class="stat-label">Enterprise Model Precision</div></div>
+          <div class="stat-item"><div class="stat-num">50%</div><div class="stat-label">False Positives Cut</div></div>
+          <div class="stat-item"><div class="stat-num">9+</div><div class="stat-label">ML Projects</div></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-content">
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-details">
-                        <h3>Master of Science in Computer Science</h3>
-                        <h4>University at Buffalo, The State University of New York</h4>
-                        <p class="education-date">Expected December 2025</p>
-                        <p class="education-gpa">CGPA: 3.8/4.0</p>
-                        <div class="education-courses">
-                            <h5>Relevant Coursework:</h5>
-                            <p>Machine Learning, Deep Learning, Statistical Data Mining, Data Intensive Computing, Computer Vision, Data Models and Query Languages, Analysis of Algorithms</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <div class="education-details">
-                        <h3>Bachelor of Technology in Computer Science and Engineering</h3>
-                        <h4>Vellore Institute of Technology, Vellore, India</h4>
-                        <p class="education-specialization">Specialization: Information Security</p>
-                        <p class="education-gpa">CGPA: 9.3/10</p>
-                        <div class="education-courses">
-                            <h5>Relevant Coursework:</h5>
-                            <p>Data Structures and Algorithms, Database Management System, Programming in OOPs, AI concepts, Image Processing, Natural Language Processing</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="avatar-frame">
+            <div class="avatar-ring"></div>
+            <img
+                src="shruti_photo.png"
+                alt="Shruti Kumari"
+                style="
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center top;
+                border: 3px solid var(--border);
+                display: block;
+                "
+            />
+            <div class="avatar-badge"><i class="fa fa-circle" style="font-size:0.5rem"></i> Available for Work</div>
+            <div class="float-tag t1">🧠 NLP &amp; LLMs</div>
+            <div class="float-tag t2">📊 Time-Series AI</div>
+            <div class="float-tag t3">⚙️ MLOps &amp; RAG</div>
             </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <i class="fa fa-chevron-down arrow"></i>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Connect!</h3>
-                    <p>I'm always interested in discussing new opportunities, innovative projects, and the latest in machine learning and AI.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>(716) 232-0253</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>shruti2210kumari@gmail.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-linkedin"></i>
-                            <a href="https://www.linkedin.com/in/shrutikumari108/" target="_blank">LinkedIn Profile</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <a href="https://github.com/shrutisurya108" target="_blank">GitHub Profile</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div> -->
+<!-- ─── ABOUT ────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">// who am i</div>
+      <h2 class="section-title">The Story So Far</h2>
+      <p class="section-sub">A data scientist who speaks Python fluently, thinks in distributions, and ships models that actually work in production.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm <strong>Shruti Kumari</strong>, a Data Scientist with 2.5+ years of hands-on experience building and deploying ML solutions for enterprise-scale problems at <strong>Hewlett Packard Enterprise</strong>.</p>
+        <p>I have completed my <strong>M.S. in Computer Science</strong> at University at Buffalo. I've worked on everything from disk failure prediction to multimodal RAG pipelines, always with a focus on models that are interpretable, reliable, and production-ready.</p>
+        <p>I believe that the best data science sits at the intersection of <strong>statistical rigor, engineering discipline, and business impact</strong>. When I'm not training models, I'm designing dashboards that make insights irresistible to decision-makers.</p>
+        <div style="margin-top:1.5rem; display:flex; gap:0.8rem; flex-wrap:wrap;">
+          <!-- 🔗 Replace # with your real portfolio URL -->
+          <a href="https://shrutisurya108.github.io" class="btn btn-outline" target="_blank"><i class="fa fa-globe"></i> Portfolio Website</a>
+          <a href="https://www.linkedin.com/in/shrutikumari108/" class="btn btn-outline" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/shrutisurya108" class="btn btn-outline" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="code-card reveal reveal-delay-2">
+        <div class="code-topbar">
+          <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+          <span class="code-filename">shruti.py</span>
+        </div>
+        <div>
+          <span class="kw">class</span> <span class="key">DataScientist</span>:<br/>
+          &nbsp;&nbsp;<span class="cm"># Shruti Kumari — MS CS, Buffalo (2026)</span><br/><br/>
+          &nbsp;&nbsp;<span class="kw">def</span> <span class="key">__init__</span>(self):<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="key">name</span>     = <span class="str">"Shruti Kumari"</span><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="key">location</span> = <span class="str">"New York, USA 🗽"</span><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="key">exp</span>      = <span class="str">"2.5+ years @ HPE"</span><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;self.<span class="key">loves</span>    = [<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"RAG Pipelines"</span>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Explainable AI"</span>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"Time-Series"</span>,<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"NLP &amp; LLMs"</span><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;]<br/><br/>
+          &nbsp;&nbsp;<span class="kw">def</span> <span class="key">hire_me</span>(self) -&gt; <span class="key">bool</span>:<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="num">True</span> &nbsp;<span class="cm"># always 😄</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Things I Am Good At -->
+    <div style="margin-top:5rem;">
+      <div class="section-header reveal">
+        <div class="section-tag">// capabilities</div>
+        <h2 class="section-title">Things I'm Good At</h2>
+        <p class="section-sub">Where craft meets computation — a breakdown of my sharpest edges.</p>
+      </div>
+      <div class="powers-grid">
+        <div class="power-card reveal">
+          <div class="power-icon">🔮</div>
+          <div class="power-title">Predictive Modeling</div>
+          <div class="power-desc">Designing and tuning ensemble models (XGBoost, Random Forest, Gradient Boosting) that achieve real business metrics — not just leaderboard scores.</div>
+          <div class="power-tags">
+            <span class="tag-chip">XGBoost</span><span class="tag-chip">RF</span><span class="tag-chip">Cross-Validation</span><span class="tag-chip">SMOTE</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-1">
+          <div class="power-icon">📡</div>
+          <div class="power-title">Time-Series & Anomaly Detection</div>
+          <div class="power-desc">Engineering 40+ features from raw telemetry and deploying LSTM / Transformer-based anomaly detectors on streaming Kafka data — reducing downtime by 30%.</div>
+          <div class="power-tags">
+            <span class="tag-chip">LSTM</span><span class="tag-chip">Transformers</span><span class="tag-chip">Kafka</span><span class="tag-chip">Feature Engineering</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-2">
+          <div class="power-icon">💬</div>
+          <div class="power-title">NLP & Language Models</div>
+          <div class="power-desc">Building sentiment analysis, topic modeling (LDA, BERTopic), and fine-tuned transformer pipelines on real-world text data from bug reports to clinical records.</div>
+          <div class="power-tags">
+            <span class="tag-chip">DistilBERT</span><span class="tag-chip">VADER</span><span class="tag-chip">LDA</span><span class="tag-chip">BERTopic</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-3">
+          <div class="power-icon">🧩</div>
+          <div class="power-title">RAG & Generative AI</div>
+          <div class="power-desc">Architecting end-to-end Retrieval-Augmented Generation pipelines with multimodal embeddings, FAISS vector stores, and sub-second query latency.</div>
+          <div class="power-tags">
+            <span class="tag-chip">FAISS</span><span class="tag-chip">BioMedCLIP</span><span class="tag-chip">LangChain</span><span class="tag-chip">Vector DBs</span>
+          </div>
+        </div>
+        <div class="power-card reveal">
+          <div class="power-icon">🔍</div>
+          <div class="power-title">Explainable AI (XAI)</div>
+          <div class="power-desc">Translating black-box predictions into actionable narratives using SHAP waterfall plots, feature importance, and clinical decision reports that non-technical stakeholders actually read.</div>
+          <div class="power-tags">
+            <span class="tag-chip">SHAP</span><span class="tag-chip">TreeExplainer</span><span class="tag-chip">Interpretability</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-1">
+          <div class="power-icon">🚀</div>
+          <div class="power-title">MLOps & Production Deployment</div>
+          <div class="power-desc">Shipping models to production via Docker, Kubernetes, FastAPI, and MLflow with Grafana dashboards for real-time monitoring — not just notebooks.</div>
+          <div class="power-tags">
+            <span class="tag-chip">Docker</span><span class="tag-chip">K8s</span><span class="tag-chip">MLflow</span><span class="tag-chip">FastAPI</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-2">
+          <div class="power-icon">📊</div>
+          <div class="power-title">Data Visualization & Storytelling</div>
+          <div class="power-desc">Designing multi-page Streamlit dashboards and Tableau reports that make stakeholders say "wow" — with Plotly charts, ROI calculators, and live model explanations.</div>
+          <div class="power-tags">
+            <span class="tag-chip">Streamlit</span><span class="tag-chip">Plotly</span><span class="tag-chip">Tableau</span><span class="tag-chip">Grafana</span>
+          </div>
+        </div>
+        <div class="power-card reveal reveal-delay-3">
+          <div class="power-icon">🧪</div>
+          <div class="power-title">Statistical Rigor</div>
+          <div class="power-desc">Validating model assumptions with hypothesis testing (chi-square, t-test), careful cross-validation strategies, and evaluation frameworks that match the problem — not just accuracy.</div>
+          <div class="power-tags">
+            <span class="tag-chip">Hypothesis Testing</span><span class="tag-chip">ROC-AUC</span><span class="tag-chip">BLEU</span><span class="tag-chip">BERTScore</span>
+          </div>
+        </div>
+        <div class="power-card reveal">
+        <div class="power-icon">🏗️</div>
+        <div class="power-title">LLM Fine-Tuning & Serving</div>
+        <div class="power-desc">Fine-tuning large language models (LLaMA-3, 7B) with QLoRA and PEFT on domain-specific instruction datasets, evaluating against strong baselines like GPT-4o, and serving adapters at production scale via vLLM and FastAPI.</div>
+        <div class="power-tags">
+            <span class="tag-chip">QLoRA</span><span class="tag-chip">PEFT</span><span class="tag-chip">LLaMA-3</span><span class="tag-chip">vLLM</span><span class="tag-chip">TRL</span>
+        </div>
+        </div>
+        <div class="power-card reveal reveal-delay-1">
+        <div class="power-icon">☁️</div>
+        <div class="power-title">Cloud-Native MLOps Pipelines</div>
+        <div class="power-desc">Designing production MLOps lifecycles on AWS — S3 data ingestion, Airflow orchestration, MLflow experiment tracking, Docker containerization, drift monitoring with Evidently AI, and automated retraining via Lambda and EventBridge.</div>
+        <div class="power-tags">
+            <span class="tag-chip">AWS</span><span class="tag-chip">Airflow</span><span class="tag-chip">Evidently AI</span><span class="tag-chip">MLflow</span><span class="tag-chip">GitHub Actions</span>
+        </div>
+        </div>
+        <div class="power-card reveal reveal-delay-2">
+        <div class="power-icon">📡</div>
+        <div class="power-title">Market Intelligence & Skill Analytics</div>
+        <div class="power-desc">Building end-to-end NLP intelligence platforms that extract signals from unstructured text — topic modeling job markets, TF-IDF skill mining, LLM-as-judge resume scoring, and interactive dashboards that surface actionable hiring trends.</div>
+        <div class="power-tags">
+            <span class="tag-chip">BERTopic</span><span class="tag-chip">TF-IDF</span><span class="tag-chip">OpenAI API</span><span class="tag-chip">Plotly</span><span class="tag-chip">PostgreSQL</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────────────── -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">// career journey</div>
+      <h2 class="section-title">Where I've Shipped</h2>
+      <p class="section-sub">Real-world ML at enterprise scale — with numbers to prove it.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">Hewlett Packard Enterprise</div>
+            <div class="tl-role">Software Engineer — Data Scientist</div>
+          </div>
+          <div class="tl-date">Aug 2022 – Jul 2024</div>
+        </div>
+        <div class="impact-badges">
+          <span class="impact-badge imp-green">✅ 88% Precision</span>
+          <span class="impact-badge imp-blue">⚡ 30% Less Downtime</span>
+          <span class="impact-badge imp-purple">🚨 50% Fewer False Positives</span>
+          <span class="impact-badge imp-gold">⏱️ 25% Faster MTTD</span>
+          <span class="impact-badge imp-green">🔧 30% Faster MTTR</span>
+        </div>
+        <ul class="tl-achievements">
+          <li>Built a disk failure prediction model using Random Forest &amp; Gradient Boosting, achieving 88% precision on enterprise storage data.</li>
+          <li>Engineered 40+ time-series features from raw telemetry, reducing unplanned downtime by 30% across storage clusters.</li>
+          <li>Improved MTTD by 25% via predictive models integrated with REST APIs directly into production incident workflows.</li>
+          <li>Built anomaly detection platform using LSTM and Transformer models on Kafka streams — cut false positives by 50%.</li>
+          <li>Designed end-to-end pipeline with cross-validation, model retraining, and PostgreSQL result storage for hardware forecasting.</li>
+          <li>Accelerated MTTR by 30% by shipping Grafana dashboards on Kubernetes for real-time cluster health monitoring.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-dot"><div class="timeline-dot-inner"></div></div>
+        <div class="tl-header">
+          <div>
+            <div class="tl-company">Hewlett Packard Enterprise</div>
+            <div class="tl-role">R&amp;D Intern — Data Science</div>
+          </div>
+          <div class="tl-date">Jan 2022 – Jul 2022</div>
+        </div>
+        <div class="impact-badges">
+          <span class="impact-badge imp-green">✅ 85% Accuracy</span>
+          <span class="impact-badge imp-blue">🏷️ 25% Better Triage</span>
+          <span class="impact-badge imp-gold">⚡ 70% Faster Bug Matching</span>
+        </div>
+        <ul class="tl-achievements">
+          <li>Delivered a Scikit-learn bug prediction model integrated with Bugzilla, achieving 85% accuracy across 100+ software projects.</li>
+          <li>Enhanced triage accuracy by 25% via an NLP feature extraction pipeline on unstructured bug reports.</li>
+          <li>Improved bug matching time by 70% by containerizing the prediction service with Docker for reproducible retraining.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ───────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">// what i've built</div>
+      <h2 class="section-title">The Lab</h2>
+      <p class="section-sub">From radiology AI to churn dashboards — a portfolio of ML projects built for real impact.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 — Featured RAG -->
+      <div class="project-card featured reveal">
+        <div class="project-accent-bar"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-icon">🩺</div>
+            <div class="project-links">
+              <!-- 🔗 Replace # with your actual GitHub repo link -->
+              <a href="https://github.com/shrutisurya108/rag-rrg" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <!-- 🔗 Replace # with your demo/live link -->
+              <a href="https://github.com/shrutisurya108/rag-rrg" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
             </div>
+          </div>
+          <div class="project-title">Multimodal RAG Pipeline for Automated Radiology Report Generation</div>
+          <div class="project-desc">
+            Built a Retrieval-Augmented Generation pipeline on the MIMIC-CXR dataset (250k+ chest X-ray image-report pairs). Used BioMedCLIP (ViT-B/16) to embed images and enable retrieval via FAISS, with a multi-phase generation module. Reduced model memory footprint by 50% with fp16 precision loading for sub-second query latency. Benchmarked findings against ground truth using BLEU, ROUGE-L, BERTScore, and CheXbert F1.
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">250K+</div><div class="metric-lbl">Image-Report Pairs</div></div>
+            <div class="metric"><div class="metric-val">50%</div><div class="metric-lbl">Memory Reduction</div></div>
+            <div class="metric"><div class="metric-val">&lt;1s</div><div class="metric-lbl">Query Latency</div></div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">PyTorch</span><span class="stack-pill">BioMedCLIP</span><span class="stack-pill">FAISS</span><span class="stack-pill">ViT-B/16</span><span class="stack-pill">HuggingFace</span><span class="stack-pill">RAG</span><span class="stack-pill">fp16</span><span class="stack-pill">BLEU / ROUGE-L</span><span class="stack-pill">BERTScore</span>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Shruti Kumari. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/shrutikumari108/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/shrutisurya108" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:shruti2210kumari@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+      <!-- PROJECT 2 -->
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-accent-bar green"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-icon">💳</div>
+            <div class="project-links">
+              <a href="https://github.com/shrutisurya108/card-retention-intelligence" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://card-retention-intelligence-pipeline.streamlit.app/" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
             </div>
+          </div>
+          <div class="project-title">Credit Card Retention Prediction + Explainable AI Dashboard</div>
+          <div class="project-desc">End-to-end churn prediction on 10k+ customers using XGBoost, Random Forest, and Logistic Regression. SHAP TreeExplainer for live waterfall explanations. Handled 16% class imbalance with SMOTE, stratified 5-fold CV. Deployed a 5-page Streamlit dashboard with a business ROI calculator.</div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">10K+</div><div class="metric-lbl">Customers</div></div>
+            <div class="metric"><div class="metric-val">5-Page</div><div class="metric-lbl">Dashboard</div></div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">XGBoost</span><span class="stack-pill">SHAP</span><span class="stack-pill">SMOTE</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Scikit-learn</span><span class="stack-pill">Plotly</span>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- PROJECT 3 -->
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-accent-bar purple"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-icon">🛍️</div>
+            <div class="project-links">
+              <a href="https://github.com/shrutisurya108/Amazon-Review-Intelligence" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://amazon-review-intelligence-nlp.streamlit.app/" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-title">NLP Sentiment & Topic Intelligence Dashboard for Amazon Reviews</div>
+          <div class="project-desc">Dual-pipeline sentiment analysis comparing VADER vs DistilBERT with agreement tracking on 24k+ Amazon reviews. Built and tuned an LDA topic model across 21k+ documents. Deployed a 4-page Streamlit Cloud dashboard with interactive Plotly charts.</div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">24K+</div><div class="metric-lbl">Reviews</div></div>
+            <div class="metric"><div class="metric-val">21K+</div><div class="metric-lbl">Documents</div></div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">DistilBERT</span><span class="stack-pill">VADER</span><span class="stack-pill">LDA</span><span class="stack-pill">Streamlit</span><span class="stack-pill">Plotly</span><span class="stack-pill">NLP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-card reveal">
+        <div class="project-accent-bar gold"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-icon">🏥</div>
+            <div class="project-links">
+              <a href="https://github.com/shrutisurya108/Patient-Readmission-Risk" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://huggingface.co/spaces/harshith68/Patient-Readmission-Risk" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-title">Clinical Readmission Risk Prediction with Explainability Report</div>
+          <div class="project-desc">Processed the UCI diabetes readmission dataset (100K+ rows) with SQL profiling. Applied SMOTE, gradient-boosted classifier, and validated with chi-square &amp; t-test hypothesis testing. Generated a full clinical decision report with SHAP explainability, confusion matrix, and feature importance plots.</div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-val">100K+</div><div class="metric-lbl">Patient Rows</div></div>
+          </div>
+          <div class="project-stack">
+            <span class="stack-pill">SQL</span><span class="stack-pill">Gradient Boosting</span><span class="stack-pill">SHAP</span><span class="stack-pill">SMOTE</span><span class="stack-pill">Hypothesis Testing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 — Stock Forecasting + Drift Monitoring -->
+<div class="project-card reveal reveal-delay-1">
+  <div class="project-accent-bar" style="background: linear-gradient(90deg,#38bdf8,#34d399);"></div>
+  <div class="project-body">
+    <div class="project-header">
+      <div class="project-icon">📈</div>
+      <div class="project-links">
+        <!-- 🔗 Replace # with your GitHub repo link -->
+        <a href="https://github.com/shrutisurya108/stock-forecast-mlops" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <!-- 🔗 Replace # with your demo/live link -->
+        <a href="https://github.com/shrutisurya108/stock-forecast-mlops" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project-title">Stock Forecasting Platform with Drift Monitoring on AWS</div>
+    <div class="project-desc">
+      End-to-end MLOps platform on AWS — raw OHLCV data ingested into S3, ETL and retraining workflows orchestrated with Airflow. Trained Random Forest, XGBoost, and LSTM models with full experiment tracking via MLflow, containerized in Docker, and deployed via FastAPI. Implemented model drift monitoring with Evidently AI and automated retraining triggers for a production-ready lifecycle.
+    </div>
+    <div class="project-metrics">
+      <div class="metric"><div class="metric-val">3</div><div class="metric-lbl">ML Models</div></div>
+      <div class="metric"><div class="metric-val">AWS</div><div class="metric-lbl">Cloud Native</div></div>
+      <div class="metric"><div class="metric-val">Auto</div><div class="metric-lbl">Retraining</div></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-pill">AWS S3</span>
+      <span class="stack-pill">Airflow</span>
+      <span class="stack-pill">XGBoost</span>
+      <span class="stack-pill">LSTM</span>
+      <span class="stack-pill">MLflow</span>
+      <span class="stack-pill">Docker</span>
+      <span class="stack-pill">FastAPI</span>
+      <span class="stack-pill">Evidently AI</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 6 — NLP Job Market Intelligence -->
+<div class="project-card reveal reveal-delay-2">
+  <div class="project-accent-bar" style="background: linear-gradient(90deg,#818cf8,#f472b6);"></div>
+  <div class="project-body">
+    <div class="project-header">
+      <div class="project-icon">💼</div>
+      <div class="project-links">
+        <a href="https://github.com/shrutisurya108/job-market-intelligence" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/shrutisurya108/job-market-intelligence" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project-title">Real-Time NLP Job Market Intelligence Platform</div>
+    <div class="project-desc">
+      End-to-end NLP pipeline ingesting 2k+ job descriptions with BERTopic and LDA topic modeling. TF-IDF-based skill extraction identifies top in-demand skills across Data Science roles, stored in PostgreSQL. Plotly dashboard visualizes skill frequency by city, salary-to-skill correlation, and keyword trends — plus an LLM-powered resume fit scorer using OpenAI as judge.
+    </div>
+    <div class="project-metrics">
+      <div class="metric"><div class="metric-val">2K+</div><div class="metric-lbl">Job Listings</div></div>
+      <div class="metric"><div class="metric-val">LLM</div><div class="metric-lbl">Resume Scorer</div></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-pill">BERTopic</span>
+      <span class="stack-pill">LDA</span>
+      <span class="stack-pill">TF-IDF</span>
+      <span class="stack-pill">OpenAI API</span>
+      <span class="stack-pill">PostgreSQL</span>
+      <span class="stack-pill">Plotly</span>
+      <span class="stack-pill">NLP</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 7 — Automated Stock Price Forecasting Pipeline -->
+<div class="project-card reveal">
+  <div class="project-accent-bar" style="background: linear-gradient(90deg,#fbbf24,#f87171);"></div>
+  <div class="project-body">
+    <div class="project-header">
+      <div class="project-icon">⚡</div>
+      <div class="project-links">
+        <a href="https://github.com/shrutisurya108/stock-forecasting-pipeline" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://stock-forecasting-pipeline.streamlit.app/" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project-title">Automated Stock Price Forecasting Pipeline with AWS Cloud Deployment</div>
+    <div class="project-desc">
+      Time-series forecasting for equities using ARIMA, Prophet, and PyTorch LSTM on OHLCV data from yFinance API. Reduced forecast RMSE by 18% over a naive baseline via model comparison using RMSE and MAPE. Daily retraining automated with GitHub Actions, AWS Lambda, and EventBridge cron scheduling — results visualized in a Plotly dashboard deployed on Streamlit Cloud.
+    </div>
+    <div class="project-metrics">
+      <div class="metric"><div class="metric-val">18%</div><div class="metric-lbl">RMSE Reduction</div></div>
+      <div class="metric"><div class="metric-val">3</div><div class="metric-lbl">Forecasting Models</div></div>
+      <div class="metric"><div class="metric-val">Daily</div><div class="metric-lbl">Auto-Retrain</div></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-pill">ARIMA</span>
+      <span class="stack-pill">Prophet</span>
+      <span class="stack-pill">PyTorch LSTM</span>
+      <span class="stack-pill">yFinance</span>
+      <span class="stack-pill">AWS Lambda</span>
+      <span class="stack-pill">EventBridge</span>
+      <span class="stack-pill">GitHub Actions</span>
+      <span class="stack-pill">Streamlit</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECT 8 — QLoRA Fine-Tuning -->
+<div class="project-card reveal reveal-delay-1">
+  <div class="project-accent-bar" style="background: linear-gradient(90deg,#34d399,#818cf8);"></div>
+  <div class="project-body">
+    <div class="project-header">
+      <div class="project-icon">🧬</div>
+      <div class="project-links">
+        <a href="#" class="proj-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" class="proj-link" title="Live Demo" target="_blank"><i class="fa fa-external-link-alt"></i></a>
+      </div>
+    </div>
+    <div class="project-title">QLoRA Fine-Tuning Pipeline for Medical Q&amp;A with API Serving</div>
+    <div class="project-desc">
+      Fine-tuned a 7B LLaMA-3 model on 2k+ curated medical Q&amp;A instruction-tuning examples using QLoRA via HuggingFace TRL + PEFT. Evaluated against ROUGE and BLEU, quantifying gains over a GPT-4o prompting baseline. Served the fine-tuned LoRA adapter via a FastAPI endpoint using vLLM for production-grade inference.
+    </div>
+    <div class="project-metrics">
+      <div class="metric"><div class="metric-val">7B</div><div class="metric-lbl">LLM Params</div></div>
+      <div class="metric"><div class="metric-val">2K+</div><div class="metric-lbl">Training Examples</div></div>
+      <div class="metric"><div class="metric-val">vLLM</div><div class="metric-lbl">Inference Engine</div></div>
+    </div>
+    <div class="project-stack">
+      <span class="stack-pill">LLaMA-3</span>
+      <span class="stack-pill">QLoRA</span>
+      <span class="stack-pill">HuggingFace TRL</span>
+      <span class="stack-pill">PEFT</span>
+      <span class="stack-pill">vLLM</span>
+      <span class="stack-pill">FastAPI</span>
+      <span class="stack-pill">ROUGE / BLEU</span>
+      <span class="stack-pill">GPT-4o</span>
+    </div>
+  </div>
+</div>
+
+    </div><!-- /projects-grid -->
+  </div>
+</section>
+
+<!-- ─── SKILLS ────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">// toolkit</div>
+      <h2 class="section-title">The Toolkit</h2>
+      <p class="section-sub">Every tool I've shipped with, tested with, or stayed up too late reading docs for.</p>
+    </div>
+
+    <div class="skills-container">
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-brain"></i> Machine Learning & AI</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">🐍 Python</span>
+          <span class="skill-badge">🔶 Scikit-learn</span>
+          <span class="skill-badge">⚡ XGBoost</span>
+          <span class="skill-badge">🌲 Random Forest</span>
+          <span class="skill-badge">📈 Gradient Boosting</span>
+          <span class="skill-badge">🔁 LSTM</span>
+          <span class="skill-badge">🤖 Transformers</span>
+          <span class="skill-badge">🧮 Keras</span>
+          <span class="skill-badge">📊 Statistical Modeling</span>
+          <span class="skill-badge">🧪 Hypothesis Testing</span>
+          <span class="skill-badge">📉 Time-Series Analysis</span>
+          <span class="skill-badge">⚖️ SMOTE</span>
+          <span class="skill-badge">✅ Cross-Validation</span>
+          <span class="skill-badge">📉 ARIMA</span>
+          <span class="skill-badge">🔮 Prophet</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-comment-dots"></i> NLP & Generative AI</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">🤗 HuggingFace</span>
+          <span class="skill-badge">🧠 DistilBERT <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">📚 BERTopic</span>
+          <span class="skill-badge">💬 VADER</span>
+          <span class="skill-badge">🗂️ LDA Topic Modeling</span>
+          <span class="skill-badge">🔗 LangChain <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🏗️ RAG Pipelines <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🗃️ FAISS <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🔡 Prompt Engineering <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🌐 OpenAI API</span>
+          <span class="skill-badge">🖼️ Vision Transformers</span>
+          <span class="skill-badge">🦙 LLaMA-3 <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🔧 QLoRA / PEFT <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">⚡ vLLM <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🧮 TF-IDF</span>
+          <span class="skill-badge">🏥 Instruction Tuning <span class="hot-badge">HOT</span></span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-database"></i> Data Engineering & Analytics</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">🐼 Pandas</span>
+          <span class="skill-badge">🔢 NumPy</span>
+          <span class="skill-badge">🐘 PostgreSQL</span>
+          <span class="skill-badge">🔍 SQL</span>
+          <span class="skill-badge">📊 R</span>
+          <span class="skill-badge">⚡ Apache Spark <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">❄️ Snowflake <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🔧 dbt <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🌊 Kafka</span>
+          <span class="skill-badge">🔄 Airflow</span>
+          <span class="skill-badge">📈 yFinance</span>
+          <span class="skill-badge">📡 Evidently AI <span class="hot-badge">HOT</span></span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-chart-bar"></i> Visualization & Storytelling</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">📊 Tableau</span>
+          <span class="skill-badge">📈 Plotly</span>
+          <span class="skill-badge">🌊 Streamlit</span>
+          <span class="skill-badge">📉 Seaborn</span>
+          <span class="skill-badge">📡 Grafana</span>
+          <span class="skill-badge">💼 Power BI</span>
+          <span class="skill-badge">🔬 Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-cloud"></i> Cloud, MLOps & DevTools</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">☁️ AWS</span>
+          <span class="skill-badge">🐳 Docker</span>
+          <span class="skill-badge">☸️ Kubernetes</span>
+          <span class="skill-badge">📦 MLflow</span>
+          <span class="skill-badge">⚡ FastAPI</span>
+          <span class="skill-badge">🔀 Git</span>
+          <span class="skill-badge">🔁 REST APIs</span>
+          <span class="skill-badge">🔬 Jupyter</span>
+          <span class="skill-badge">🔄 CI/CD for ML <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">📊 A/B Testing</span>
+          <span class="skill-badge">⚡ AWS Lambda</span>
+          <span class="skill-badge">🕐 EventBridge</span>
+          <span class="skill-badge">🔁 GitHub Actions <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">📊 Evidently AI <span class="hot-badge">HOT</span></span>
+          <span class="skill-badge">🦙 vLLM <span class="hot-badge">HOT</span></span>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="skill-group-title"><i class="fa fa-fire"></i> Explainability & Evaluation</div>
+        <div class="skills-wrap">
+          <span class="skill-badge">🔍 SHAP</span>
+          <span class="skill-badge">📊 ROC-AUC</span>
+          <span class="skill-badge">📝 BLEU / ROUGE-L</span>
+          <span class="skill-badge">🤖 BERTScore</span>
+          <span class="skill-badge">🏥 CheXbert F1</span>
+          <span class="skill-badge">📐 Confusion Matrix</span>
+          <span class="skill-badge">🧬 Chi-Square / T-Test</span>
+          <span class="skill-badge">📐 RMSE / MAPE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUOTES ─────────────────────────────────────── -->
+<section id="quotes">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">// wisdom bytes</div>
+      <h2 class="section-title">Data Minds Speak</h2>
+      <p class="section-sub">Quotes that live rent-free in my head while I'm debugging cross-validation folds at 2am.</p>
+    </div>
+
+    <div class="quotes-carousel reveal">
+      <div class="quote-track" id="quote-track">
+        <div class="quote-slide">
+          <p class="quote-text">In God we trust. All others must bring data.</p>
+          <p class="quote-author">— W. Edwards Deming</p>
+        </div>
+        <div class="quote-slide">
+          <p class="quote-text">The goal is to turn data into information, and information into insight.</p>
+          <p class="quote-author">— Carly Fiorina</p>
+        </div>
+        <div class="quote-slide">
+          <p class="quote-text">Data science is not about the data. It's about the questions you ask of the data.</p>
+          <p class="quote-author">— Cassie Kozyrkov</p>
+        </div>
+        <div class="quote-slide">
+          <p class="quote-text">The best model is the simplest one that adequately captures the complexity of the problem.</p>
+          <p class="quote-author">— George E. P. Box</p>
+        </div>
+        <div class="quote-slide">
+          <p class="quote-text">Without big data analytics, companies are blind and deaf, wandering out onto the web like deer on a freeway.</p>
+          <p class="quote-author">— Geoffrey Moore</p>
+        </div>
+        <div class="quote-slide">
+          <p class="quote-text">A machine that learned from all of human knowledge can still fail at a task if it wasn't asked the right question.</p>
+          <p class="quote-author">— Shruti Kumari 🙂</p>
+        </div>
+      </div>
+      <div class="quote-controls">
+        <button class="q-btn" id="q-prev"><i class="fa fa-chevron-left"></i></button>
+        <div id="q-dots"></div>
+        <button class="q-btn" id="q-next"><i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-text reveal">
+        <div class="section-tag">// let's connect</div>
+        <h2>Let's Build Something<br/><span style="color:var(--accent)">Intelligent</span> Together</h2>
+        <p>Whether you're looking for a Data Scientist, ML Engineer, or AI enthusiast — I'm actively exploring new opportunities and always happy to chat about interesting problems.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/shrutikumari108/" class="social-link" target="_blank">
+            <i class="fab fa-linkedin" style="color:#0077b5"></i> LinkedIn
+          </a>
+          <a href="https://github.com/shrutisurya108" class="social-link" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="mailto:shrutikumari4876@gmail.com" class="social-link">
+            <i class="fab fa-google" style="color:#ea4335"></i> Gmail
+          </a>
+          <!-- 🔗 Replace # with your actual portfolio link -->
+          <a href="https://shrutisurya108.github.io" class="social-link" target="_blank">
+            <i class="fa fa-globe" style="color:var(--accent)"></i> Portfolio
+          </a>
+          <!-- 🔗 Optionally add Twitter/X, Kaggle, Medium, etc. -->
+          <!-- <a href="#" class="social-link" target="_blank">
+            <i class="fab fa-kaggle" style="color:#20beff"></i> Kaggle
+          </a> -->
+        </div>
+      </div>
+
+      <div class="contact-card reveal reveal-delay-2">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:shrutikumari4876@gmail.com">shrutikumari4876@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa fa-phone"></i></div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:+17162320253">+1 (716) 232-0253</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">New York, USA 🗽</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fa fa-graduation-cap"></i></div>
+          <div>
+            <div class="contact-label">Education</div>
+            <div class="contact-value">M.S. CS — University at Buffalo</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" style="background:rgba(52,211,153,0.1); border-color:rgba(52,211,153,0.3); color:var(--accent3)"><i class="fa fa-circle"></i></div>
+          <div>
+            <div class="contact-label">Status</div>
+            <div class="contact-value" style="color:var(--accent3)">✅ Actively seeking Data / AI / ML roles</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="mailto:shrutikumari4876@gmail.com" class="btn btn-primary" style="width:100%; justify-content:center;">
+            <i class="fa fa-paper-plane"></i> &nbsp;Say Hello
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p>Designed & built with ❤️ by <span>Shruti Kumari</span> &nbsp;·&nbsp; © 2026 &nbsp;·&nbsp; Buffalo, NY</p>
+    <p style="margin-top:0.4rem; font-size:0.68rem;">Data Scientist · AI/ML Explorer · Open to Opportunities</p>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-top" title="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+<!-- ─── SCRIPTS ─────────────────────────────────── -->
+<script>
+// ── Custom cursor
+const cursor = document.getElementById('cursor');
+const ring   = document.getElementById('cursor-ring');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX - 6 + 'px';
+  cursor.style.top  = e.clientY - 6 + 'px';
+  ring.style.left   = e.clientX - 18 + 'px';
+  ring.style.top    = e.clientY - 18 + 'px';
+});
+document.querySelectorAll('a, button').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; ring.style.opacity = '0.2'; });
+  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.opacity = '0.5'; });
+});
+
+// ── Particle canvas
+(function() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let W, H, pts = [];
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  for (let i = 0; i < 80; i++) {
+    pts.push({
+      x: Math.random() * 1920, y: Math.random() * 1080,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 1.5 + 0.5
+    });
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#38bdf8';
+    pts.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = accent;
+      ctx.fill();
+    });
+    pts.forEach((a, i) => {
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 130) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = accent;
+          ctx.globalAlpha = (1 - d / 130) * 0.25;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── Theme toggle
+const themeBtn = document.getElementById('theme-toggle');
+const html = document.documentElement;
+// Auto-detect system theme
+if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+  html.setAttribute('data-theme', 'light');
+  themeBtn.textContent = '🌙';
+}
+themeBtn.addEventListener('click', () => {
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  themeBtn.textContent = isDark ? '🌙' : '☀️';
+});
+
+// ── Hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+document.querySelectorAll('#nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+});
+
+// ── Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── Back to top
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => { backTop.classList.toggle('show', window.scrollY > 400); });
+backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Quotes carousel
+(function() {
+  const track  = document.getElementById('quote-track');
+  const slides = track.querySelectorAll('.quote-slide');
+  const dotsEl = document.getElementById('q-dots');
+  let cur = 0;
+  const total = slides.length;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const d = document.createElement('span');
+    d.className = 'q-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  });
+
+  function goTo(n) {
+    cur = (n + total) % total;
+    track.style.transform = `translateX(-${cur * 100}%)`;
+    dotsEl.querySelectorAll('.q-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+
+  document.getElementById('q-prev').addEventListener('click', () => goTo(cur - 1));
+  document.getElementById('q-next').addEventListener('click', () => goTo(cur + 1));
+
+  // Auto-advance
+  setInterval(() => goTo(cur + 1), 5000);
+})();
+</script>
 </body>
 </html>
