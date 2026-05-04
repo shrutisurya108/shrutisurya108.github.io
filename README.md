@@ -1,6 +1,6 @@
 # 🌐 Shruti Kumari — Portfolio Website
 
-[![Live Site](https://img.shields.io/badge/🚀%20Live%20Site-shrutikumari108.github.io-38bdf8?style=for-the-badge)](https://shrutikumari108.github.io)
+[![Live Site](https://img.shields.io/badge/🚀%20Live%20Site-shrutisurya108.github.io-38bdf8?style=for-the-badge)](https://shrutisurya108.github.io)
 [![HTML](https://img.shields.io/badge/HTML5-Single%20File-E34F26?style=for-the-badge&logo=html5&logoColor=white)](index.html)
 [![License](https://img.shields.io/badge/License-MIT-4ade80?style=for-the-badge)](LICENSE)
 
@@ -41,15 +41,15 @@
 
 ### Step 1 — Create the repo
 ```
-Repository name: shrutikumari108.github.io
+Repository name: shrutisurya108.github.io
 Visibility: Public
 ```
 > The repo name **must** match your GitHub username exactly for user-level GitHub Pages.
 
 ### Step 2 — Add the file
 ```bash
-git clone https://github.com/shrutikumari108/shrutikumari108.github.io
-cd shrutikumari108.github.io
+git clone https://github.com/shrutisurya108/shrutisurya108.github.io
+cd shrutisurya108.github.io
 # Copy index.html into this folder
 git add index.html
 git commit -m "🚀 Launch portfolio website"
@@ -60,7 +60,7 @@ git push origin main
 1. Go to **Settings → Pages**
 2. Source: **Deploy from a branch**
 3. Branch: `main` / `root`
-4. Save → Your site is live at `https://shrutikumari108.github.io` 🎉
+4. Save → Your site is live at `https://shrutisurya108.github.io` 🎉
 
 ---
 
@@ -78,7 +78,7 @@ git push origin main
 
 - [ ] **Resume link**: Find the `<!-- 🔗 Replace # with your actual portfolio/resume link -->` comment and replace `href="#"` with your resume URL (Google Drive, Dropbox, etc.)
 
-- [ ] **GitHub username in links**: Update `https://github.com/shrutikumari108` if your username differs.
+- [ ] **GitHub username in links**: Update `https://github.com/shrutisurya108` if your username differs.
 
 - [ ] **Kaggle link**: Replace the `href="#"` on the Kaggle social button with your Kaggle profile URL.
 
@@ -106,7 +106,7 @@ Each placeholder card is clearly marked with `<!-- ✏️ PLACEHOLDER PROJECT 5 
 ## 🗂️ File Structure
 
 ```
-shrutikumari108.github.io/
+shrutisurya108.github.io/
 │
 ├── index.html          # ← The entire site (single file)
 ├── your-photo.jpg      # ← Add your photo here
@@ -133,7 +133,7 @@ shrutikumari108.github.io/
 📧 shrutikumari4876@gmail.com  
 📞 +1 (716) 232-0253  
 🔗 [LinkedIn](https://www.linkedin.com/in/shrutikumari108/)  
-🐙 [GitHub](https://github.com/shrutikumari108)
+🐙 [GitHub](https://github.com/shrutisurya108)
 
 ---
 
